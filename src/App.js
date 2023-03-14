@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Form from "./components/Form";
+import Card from "./components/Card";
+
+import { useState } from "react";
 
 function App() {
+  const cardInitialValues = {
+    cardName: "",
+    cardDescription: "",
+    cardAttr1: "",
+    cardAttr2: "",
+    cardAttr3: "",
+    cardImage: "",
+    cardRare: "",
+    cardTrunfo: false,
+  };
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [cardAttr1, setCardAttr1] = useState("");
+  const [cardAttr2, setCardAttr2] = useState("");
+  const [cardAttr3, setCardAttr3] = useState("");
+  const [cardImage, setCardImage] = useState("");
+  const [cardRare, setCardRare] = useState("");
+  const [cardTrunfo, setCardTrunfo] = useState(false);
+
+  function onInputChange(ev) {
+    const { name, value } = ev.target;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Form onInputChange={onInputChange} />
+      <Card />
     </div>
   );
 }
