@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.carta {
+  background-color: #DDD;
+  width: fit-content;
+  min-width: 126px;
+  min-height: 176px;
+  padding: 5px;
+  border: 2px solid grey;
+  margin: 10px;
+}
+
+.baralho {
+  display: flex;
+  flex-direction: row;
+}
+
+.image-card {
+  width: 128px;
+  height: 128px;
+}
